@@ -62,6 +62,7 @@ body {
   padding: 8px;
   background-color: #C1B443;
   overflow: hidden;
+  z-index: 9999;
 }
  
 .app-bar .app-bar__navigation.open {
@@ -116,6 +117,14 @@ main {
   flex: 1;
 }
 
+.content {
+  margin: 0 auto;
+  min-height: 100%;
+}
+ 
+.content .content__heading {
+  font-weight: normal;
+}
 
 
 
