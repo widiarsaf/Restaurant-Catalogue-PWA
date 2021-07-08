@@ -1,10 +1,15 @@
+import UrlParser from '../routes/url-parser';
+import routes from '../routes/routes';
 import DrawerInitiator from '../utils/drawer-initiator';
 
 class App {
-  constructor({ button, drawer, content }) {
+  constructor({
+    button, drawer, content, hero,
+  }) {
     this._button = button;
     this._drawer = drawer;
     this._content = content;
+    this._hero = hero;
 
     this._initialAppShell();
   }
@@ -14,7 +19,15 @@ class App {
       button: this._button,
       drawer: this._drawer,
       content: this._content,
+      hero: this._hero,
     });
+  }
+
+  async renderPage() {
+    const url = UrlParser.parseActiveUrlWithCombiner();
+    const page = routes[url];
+    this._content.innerHTML = await page.render();
+    await page.afterRender();
   }
 }
 
