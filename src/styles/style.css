@@ -115,9 +115,8 @@ body {
 main {
   padding: 32px;
   flex: 1;
-  border: 2px solid black;
 }
-
+ 
 .content {
   margin: 0 auto;
   min-height: 100%;
@@ -125,6 +124,106 @@ main {
  
 .content .content__heading {
   font-weight: normal;
+  text-align: center;
+}
+
+.content__heading{
+  color: #afa126;
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 40px;
+}
+ 
+
+/*
+  Restaurants
+*/
+ 
+.restaurants {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 32px 40px;
+}
+ 
+ 
+/*
+  Resto Item
+*/
+ 
+.resto-item {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+ 
+.resto-item__header {
+  position: relative;
+}
+ 
+.resto-item .resto-item__header .resto-item__header__poster {
+  width: 100%;
+}
+ 
+.resto-item .resto-item__header .resto-item__header__rating {
+  position: absolute;
+  padding: 8px;
+  bottom: 20px;
+  left: 0;
+  display: inline-block;
+  background-color: black;
+  color: white;
+}
+ 
+.resto-item .resto-item__header .resto-item__header__rating .resto-item__header__rating__score {
+  margin-left: 10px;
+}
+ 
+.resto-item .resto-item__content {
+  padding: 16px;
+}
+ 
+.resto-item .resto-item__content h3, .resto-item__content h4 {
+  margin: 0 0 10px 0;
+}
+ 
+.resto-item .resto-item__content h3 a {
+  color: #d4a21a;
+  text-decoration: none;
+}
+ .resto-item__content a {
+  text-align: center;
+}
+ 
+.resto-item .resto-item__content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+
+/* singel restaurant */
+
+
+.restaurant {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 10px;
+}
+ 
+.restaurant .resto-detail__poster {
+  width: 100%;
+}
+
+ 
+.restaurant .resto-detail__info h4 {
+  margin: 8px 0;
 }
 
 
