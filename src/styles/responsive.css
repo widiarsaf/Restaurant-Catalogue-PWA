@@ -1,5 +1,5 @@
-@media screen and (min-width: 650px) {
-  .app-bar {
+@media screen and (min-width: 650px){
+ .app-bar {
       grid-template-columns: 1fr auto;
       padding: 8px 32px;
   }
@@ -27,12 +27,11 @@
       text-align: center;
       margin: 0;
   }
+}
+
+@media screen and (min-width: 200px) {
  
-  .restaurants {
-      grid-template-columns: 1fr 1fr;
-      
-  }
- 
+
   .restaurant {
       grid-template-columns:1fr;
   }
@@ -46,6 +45,15 @@
       grid-column-start: 1;
       grid-column-end: 3;
   }
+
+    .restaurants {
+      grid-template-columns: 1fr 1fr;
+      
+  }
+ 
+
+ 
+  
 }
  
 @media screen and (min-width: 800px) {

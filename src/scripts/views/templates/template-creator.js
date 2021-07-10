@@ -18,54 +18,50 @@ const createRestoItemTemplate = (data) => `
   `;
 
 const createRestoDetailTemplate = (detail) => `
-    <img class="resto-detail__poster" src="${API_ENDPOINT.IMAGE.M}${detail.pictureId}" />
+    <img class="resto-detail__poster" src="${API_ENDPOINT.IMAGE.S}${detail.pictureId}" />
   <h2 class="resto-detail__title">${detail.name}</h2>
   <h3 class="resto-detail__location">${detail.city}, ${detail.address}</h3>
-  <div class="resto-detail__info">
-  <h3>Information</h3>
-    
+  <div class="resto-detail__info">    
   </div>
   <div class="resto-detail__overview">
-    <h4>Tagline</h4>
+    <h4 class="resto-detail__description">Description</h4>
     <p>${detail.description}</p>
-    <h4>Release Date</h4>
+    <h4 class="resto-detail__categories">Categories</h4>
     <li>${detail.categories
     .map(
       (category) => `
-            <span class="category">${category.name}</span>
+            <span>${category.name}</span>
           `,
     )}
       </li>
-    <h4>Menu Makanan</h4>
+    <h4 class="resto-detail__makanan">Menu Makanan</h4>
     <li>${detail.menus.foods
     .map(
       (food) => `
-            <span class="category">${food.name}</span>
+            <span>${food.name}</span>
           `,
     )}
       </li>
-    <h4>Menu Minuman</h4>
-     <li>${detail.menus.drinks
+    <h4 class="resto-detail__minuman">Menu Minuman</h4>
+    <li>${detail.menus.drinks
     .map(
       (drink) => `
-            <span class="category">${drink.name}</span>
+            <span>${drink.name}</span>
           `,
     )}
       </li>
-    <h3>Review</h3>
+    <h3 class="resto-detail__review">Review</h3>
      ${detail.customerReviews
     .map(
       (review) => `
           <div class="detail-review-item">
-            <div class="review-header">
-              <p class="review-name"><i title="restaurant" class="fa fa-user-circle" style="font-size:1.3em;"></i>&nbsp;${review.name}</p>
+              <p class="review-name"><i class="fas fa-user-circle"></i>  ${review.name}</p>
               <p class="review-date">${review.date}</p>
-            </div>
             <div class="review-body">
               ${review.review}
             </div>
           </div>
-        `,
+        `
     )}
   </div>
 `;

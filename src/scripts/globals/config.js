@@ -5,6 +5,7 @@ const CONFIG = {
   DATABASE_NAME: 'restoExplorer-catalogue-database',
   DATABASE_VERSION: 1,
   OBJECT_STORE_NAME: 'restaurants',
+  WEB_SOCKET_SERVER: 'wss://movies-feed.dicoding.dev',
 };
 
 export default CONFIG;
