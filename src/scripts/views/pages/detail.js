@@ -1,6 +1,7 @@
 import UrlParser from '../../routes/url-parser';
 import RestoDbSource from '../../data/restodb-source';
-import { createRestoDetailTemplate } from '../templates/template-creator';
+import { createRestoDetailTemplate, createLikeButtonTemplate } from '../templates/template-creator';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 const Detail = {
   async render() {
@@ -10,6 +11,7 @@ const Detail = {
         <div id="restaurant" class="restaurant">
 
         </div>
+        <div id="likeButtonContainer"></div>
       </div>
     `;
   },
@@ -19,6 +21,11 @@ const Detail = {
     const restaurant = await RestoDbSource.detailResto(url.id);
     const restaurantContainer = document.querySelector('#restaurant');
     restaurantContainer.innerHTML = createRestoDetailTemplate(restaurant);
+
+    LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      restaurant,
+    });
   },
 };
 
