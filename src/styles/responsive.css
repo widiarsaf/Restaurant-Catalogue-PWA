@@ -46,15 +46,28 @@
       grid-column-end: 3;
   }
 
-    .restaurants {
-      grid-template-columns: 1fr 1fr;
+  .restaurants {
+      grid-template-columns: 1fr;
       
   }
  
-
- 
   
 }
+
+@media screen and (min-width: 320px){
+.restaurants {
+      grid-template-columns: 1fr;
+      
+  }
+}
+
+@media screen and (max-width: 425px){
+.restaurants {
+      grid-template-columns: 1fr;
+      
+  }
+}
+
  
 @media screen and (min-width: 800px) {
   .app-bar .app-bar__brand h1 {
